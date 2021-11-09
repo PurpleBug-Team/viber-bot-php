@@ -36,6 +36,14 @@ class Conversation extends Event
     protected $type;
 
     /**
+     * Param "subscribed" is missing in documentation.
+     * It's "true" if user was subscribed but delete dialogue without unsubscribe
+     *
+     * @var bool
+     */
+    protected $subscribed;
+
+    /**
      * Get the value of Context information
      *
      * @return string
@@ -63,5 +71,15 @@ class Conversation extends Event
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Get the subscribtion status
+     *
+     * @return bool
+     */
+    public function isSubscribed()
+    {
+        return $this->subscribed;
     }
 }
